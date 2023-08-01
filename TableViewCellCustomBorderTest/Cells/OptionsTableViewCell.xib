@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="324" height="57"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-vZ-BeF">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-vZ-BeF" customClass="BorderedView" customModule="TableViewCellCustomBorderTest" customModuleProvider="target">
                         <rect key="frame" x="16" y="0.0" width="292" height="57"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUd-q7-Hej">
