@@ -21,122 +21,54 @@ class OptionsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
+        updateBorders()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-//        edges = [.left, .right]
-//        container.addBorders(edges: edges ?? .all, color: .red, width: borderWidth)
-        if leftBorder == nil {
-            addLeftBorder()
+    override var bounds: CGRect {
+        didSet {
+            updateBorders()
         }
-        
-        if rightBorder == nil {
-            addRightBorder()
-        }
-        
-         //Update the frames based on the current bounds
-        leftBorder?.frame = CGRect(x: bounds.minX,
-                                    y: 0,
-                                    width: borderWidth,
-                                    height: bounds.maxY)
-        print(bounds.maxX)
-//        rightBorder?.frame = CGRect(x: bounds.maxX,
-//                                    y: 0,
-//                                    width: borderWidth,
-//                                    height: bounds.maxY)
-        
-        rightBorder?.frame = CGRect(x: bounds.maxX - borderWidth,
-                                       y: 0,
-                                       width: borderWidth,
-                                       height: bounds.maxY)
-
     }
     
-    func addLeftBorder() {
-        leftBorder = CALayer()
+    func updateBorders() {
+        if leftBorder == nil { leftBorder = addBorder() }
         
-        leftBorder?.backgroundColor = UIColor.red.cgColor
+        if rightBorder == nil { rightBorder = addBorder()}
         
-        container.layer.addSublayer(leftBorder ?? CALayer())
+        leftBorder?.frame = CGRect(
+            x: container.bounds.minX,
+            y: 0,
+            width: borderWidth,
+            height: bounds.maxY
+        )
+        
+        rightBorder?.frame = CGRect(
+            x: container.bounds.maxX - borderWidth,
+            y: 0,
+            width: borderWidth,
+            height: bounds.maxY
+        )
+        
+        // For DEBUG
+        print("bounds.minX \(bounds.minX)")
+        print("container.bounds.maxX \(container.bounds.minX)")
+
+        print("bounds.maxX \(bounds.maxX)")
+        print("container.bounds.maxX \(container.bounds.maxX)")
     }
     
-    func addRightBorder() {
-        rightBorder = CALayer()
-        
-        rightBorder?.backgroundColor = UIColor.red.cgColor
-        
-        container.layer.addSublayer(rightBorder ?? CALayer())
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateBorders()
     }
 
-}
-
-extension UIView {
-    func addBorders(edges: UIRectEdge, color: UIColor, width: CGFloat) {
+    func addBorder() -> CALayer {
         let border = CALayer()
+        border.backgroundColor = UIColor.red.cgColor
+        container.layer.addSublayer(border)
         
-        if edges.contains(.left) {
-            border.frame = CGRect(x: 0,
-                                  y: 0,
-                                  width: width,
-                                  height: frame.height)
-            border.backgroundColor = color.cgColor
-            layer.addSublayer(border)
-            print(border.frame)
-        }
-        
-        if edges.contains(.right) {
-            border.frame = CGRect(x: frame.width,
-                                  y: 0,
-                                  width: width,
-                                  height: frame.height)
-            border.backgroundColor = color.cgColor
-            layer.addSublayer(border)
-        }
-        
-        if edges.contains(.top) {
-            border.frame = CGRect(x: 0,
-                                  y: 0,
-                                  width: frame.width,
-                                  height: width)
-            border.backgroundColor = color.cgColor
-            layer.addSublayer(border)
-        }
-        
-        if edges.contains(.bottom) {
-            border.frame = CGRect(x: frame.height,
-                                  y: 0,
-                                  width: frame.width,
-                                  height: width)
-            border.backgroundColor = color.cgColor
-            layer.addSublayer(border)
-        }
-        
-
-        
-//        switch edges {
-//        case .left: border.frame = CGRect(x: 0,
-//                                         y: 0,
-//                                         width: width,
-//                                         height: frame.height)
-//        case .right: border.frame = CGRect(x: frame.width,
-//                                           y: 0,
-//                                           width: width,
-//                                           height: frame.height)
-//        case .top: border.frame = CGRect(x: 0,
-//                                         y: 0,
-//                                         width: frame.width,
-//                                         height: width)
-//        case .bottom: border.frame = CGRect(x: frame.height,
-//                                            y: 0,
-//                                            width: frame.width,
-//                                            height: width)
-//        default: break
-//
-//        }
-
-        
-        
+        return border
     }
 }
+
+

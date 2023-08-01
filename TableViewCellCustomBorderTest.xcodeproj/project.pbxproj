@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DDC1A092A78F7FC0034BD12 /* UIView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC1A082A78F7FC0034BD12 /* UIView+Borders.swift */; };
 		FD2628912A77F2E200E4AB31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2628902A77F2E200E4AB31 /* AppDelegate.swift */; };
 		FD2628932A77F2E200E4AB31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2628922A77F2E200E4AB31 /* SceneDelegate.swift */; };
 		FD2628952A77F2E200E4AB31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2628942A77F2E200E4AB31 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DDC1A082A78F7FC0034BD12 /* UIView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Borders.swift"; sourceTree = "<group>"; };
 		FD26288D2A77F2E200E4AB31 /* TableViewCellCustomBorderTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewCellCustomBorderTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD2628902A77F2E200E4AB31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD2628922A77F2E200E4AB31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DDC1A072A78F7E10034BD12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3DDC1A082A78F7FC0034BD12 /* UIView+Borders.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FD2628842A77F2E200E4AB31 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		FD26288F2A77F2E200E4AB31 /* TableViewCellCustomBorderTest */ = {
 			isa = PBXGroup;
 			children = (
+				3DDC1A072A78F7E10034BD12 /* Extensions */,
 				FD2628A92A77F3CF00E4AB31 /* Controllers */,
 				FD2628A42A77F2F500E4AB31 /* Cells */,
 				FD2628902A77F2E200E4AB31 /* AppDelegate.swift */,
@@ -165,6 +176,7 @@
 				FD2628952A77F2E200E4AB31 /* ViewController.swift in Sources */,
 				FD2628912A77F2E200E4AB31 /* AppDelegate.swift in Sources */,
 				FD2628932A77F2E200E4AB31 /* SceneDelegate.swift in Sources */,
+				3DDC1A092A78F7FC0034BD12 /* UIView+Borders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     "Grapes",
                     "Lichie",
                     "Jackfruit",
-                    "Watermelon"]
+                    "Watermelon",
+                    "Strawberry",
+                    "Grapes",
+                    "Lichie",
+                    "Jackfruit",
+                    "Watermelon",
+                    "Strawberry",
+                    "Grapes",
+                    "Lichie",
+                    "Jackfruit",
+                    "Watermelon",
+                    "Strawberry",
+                    "Grapes",
+                    "Lichie",
+                    "Jackfruit",
+                    "Watermelon"
+    ]
     
     lazy var tableView: UITableView =  {
         let tv = UITableView()
